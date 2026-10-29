@@ -1,0 +1,3 @@
+Taruh peta dunia (equirectangular, rasio 2:1, mis. 4096x2048) dengan nama earth.jpg di folder ini.
+Sumber gratis: NASA Visible Earth (Blue Marble), Natural Earth, atau Solar System Scope.
+Jalankan lewat server lokal (mis. python -m http.server) agar gambar bisa dimuat sebagai tekstur.

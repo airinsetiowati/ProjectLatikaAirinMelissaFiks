@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EarthFera - Beyond What We See</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/textures.js"></script>
+<link rel="stylesheet" href="css/style.css"></head><body>
+<nav><b>EARTHFERA</b><a href="#home">Beranda</a><a href="#atmosfer">Atmosfer</a><a href="#tanah">Tanah</a><a href="#bumi">Dalam Bumi</a><a href="#kuis">Kuis</a><span class="xp" id="xp">0 XP</span></nav>
+
+<section class="hero" id="home">
+<div class="lab">YUK, JELAJAHI BUMI</div><h1>EarthFera</h1><p class="sub">Beyond What We See · Mau mulai dari mana petualanganmu?</p>
+<div id="hw">
+  <canvas id="hc"></canvas>
+  <div class="earth-ui">
+    <div class="earth-controls">
+      <button id="btnRotate" class="ctrl-btn active" type="button" title="Putar Otomatis">⏸️ Putar</button>
+      <button id="btnClouds" class="ctrl-btn active" type="button" title="Lapisan Awan">☁️ Awan</button>
+      <button id="btnLights" class="ctrl-btn active" type="button" title="Lampu Kota Malam">🌃 Lampu Kota</button>
+      <button id="btnReset" class="ctrl-btn" type="button" title="Reset Pandangan Kamera">🔄 Reset</button>
+      <div class="ctrl-group">
+        <button id="btnZoomIn" class="ctrl-btn" type="button" title="Perbesar (Zoom In)">➕</button>
+        <button id="btnZoomOut" class="ctrl-btn" type="button" title="Perkecil (Zoom Out)">➖</button>
+      </div>
+    </div>
+    <div class="earth-info">
+      <span>🌍 <b>Bumi 3D Fotorealistik (NASA)</b> · Kemiringan Sumbu 23,4° · Seret untuk memutar · Scroll / cubit untuk zoom</span>
+    </div>
+  </div>
+</div>
+<div class="cards">
+<a class="card" href="#atmosfer"><div class="lab">01 · 5 LAPISAN</div><h3>Atmosfer</h3><span>Terbang ke langit</span></a>
+<a class="card" href="#tanah"><div class="lab">02 · 6 HORIZON</div><h3>Lapisan Tanah</h3><span>Gali yang ada di bawah kakimu</span></a>
+<a class="card" href="#bumi"><div class="lab">03 · 4 LAPISAN</div><h3>Dalam Bumi</h3><span>Menyelam ke pusat Bumi</span></a></div>
+</section>
+
+<section id="atmosfer"><div class="lab">MISI 01 · ATMOSFER</div><h2>Yuk, Naik Menembus Langit!</h2>
+<p class="sub">Geser ke atas, makin tinggi makin gelap. Klik setiap lapisan.</p>
+<div class="row"><div id="atm"><div id="atmIn"></div></div>
+<div><div class="ro">Lapisan<b id="rn">Troposfer</b>Ketinggian<b id="rr">0–12 km</b>Suhu<b id="rt" style="font-size:15px">—</b></div><div class="list" id="al" style="margin-top:12px"></div></div></div>
+<div class="note">Ilustrasi tidak sesuai skala: ketebalan lapisan dilebih-lebihkan.</div></section>
+
+<section id="tanah"><div class="lab">MISI 02 · TANAH</div><h2>Apa yang Ada di Bawah Kakimu?</h2>
+<p class="sub">Gulir ke bawah untuk menggali. Klik setiap horizon. Hujan meresap = pencucian (leaching).</p>
+<div class="row"><div id="soil"></div><div class="list" id="sl"></div></div>
+<div class="note">Horizon E nggak selalu ada di semua jenis tanah.</div></section>
+
+<section id="bumi"><div class="lab">MISI 03 · DALAM BUMI</div><h2>Selamat Datang di Pusat Bumi</h2>
+<p class="sub">Klik hotspot yang berdenyut, atau tekan tombol bor untuk menembus ke inti.</p>
+<div class="row"><div><div id="cw"><canvas id="cc"></canvas></div><span class="hint">Seret untuk memutar · klik lapisan atau titik berdenyut</span><div id="tip">Pilih lapisan atau tekan tombol bor untuk memulai.</div><div style="text-align:center;margin-top:12px"><button class="btn" id="borBtn" onclick="bor()">Bor Otomatis ke Inti</button></div></div><div class="list" id="el"></div></div></section>
+
+<section id="kuis"><div class="lab">MISI AKHIR</div><h2 style="text-align:center">Siap Tantang Dirimu?</h2><p class="sub" style="text-align:center">10 soal, tanpa isi nama. Langsung mulai.</p>
+<div id="quiz"><div style="text-align:center"><button class="btn" onclick="startQ()">Mulai Kuis</button></div></div></section>
+<footer>EarthFera - Beyond What We See · Rujukan: NASA, USGS. Dibuat untuk pembelajaran.</footer>
+
+<div id="pop"><div class="pb" id="pb"></div></div>
+<div id="lp" role="dialog" aria-modal="true" aria-label="Materi Lapisan Bumi"><div class="lp-box" id="lpb"></div></div>
+
+<script src="js/main.js"></script>
+<script src="js/worm.js"></script>
+<script src="js/rocket.js"></script></body></html>
